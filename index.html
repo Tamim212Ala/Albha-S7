@@ -1,0 +1,93 @@
+
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>العبها صح</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      background: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background-color: #6200ea;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .container {
+      padding: 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+    .quiz-box {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .question {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+    .options button {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      border: none;
+      background-color: #e0e0e0;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .options button:hover {
+      background-color: #d1c4e9;
+    }
+    .result {
+      display: none;
+      font-size: 1.2rem;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    العبها صح 🎯
+  </header>
+
+  <div class="container">
+    <div class="quiz-box">
+      <div class="question" id="question">ما هي عاصمة السعودية؟</div>
+      <div class="options">
+        <button onclick="checkAnswer(this, false)">جدة</button>
+        <button onclick="checkAnswer(this, false)">مكة</button>
+        <button onclick="checkAnswer(this, true)">الرياض</button>
+        <button onclick="checkAnswer(this, false)">الدمام</button>
+      </div>
+      <div class="result" id="result"></div>
+    </div>
+  </div>
+
+  <script>
+    function checkAnswer(button, correct) {
+      const result = document.getElementById('result');
+      if (correct) {
+        result.textContent = 'إجابة صحيحة ✔️';
+        result.style.color = 'green';
+      } else {
+        result.textContent = 'إجابة خاطئة ❌';
+        result.style.color = 'red';
+      }
+      result.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
